@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark theme (default) */
+:root {
+  color-scheme: dark;
+  --ink: #0b0c10;
+  --panel: #14161c;
+  --panel-2: #1b1e26;
+  --text: #f2f1ec;
+  --muted: #9a9ca5;
+  --line: rgba(255, 255, 255, 0.09);
+  --accent: #7c5cfc;
+  --accent-soft: #9b85ff;
+  --warm: #ffb020;
+  --surface-translucent: rgba(11, 12, 16, 0.85);
+  --surface-translucent-solid: rgba(11, 12, 16, 0.98);
+}
+
+/* Light theme — activated by ThemeToggle setting
+   data-theme="light" on <html> (see src/components/ThemeToggle.jsx) */
+[data-theme="light"] {
+  color-scheme: light;
+  --ink: #f7f7fa;
+  --panel: #ffffff;
+  --panel-2: #f0eff6;
+  --text: #14161c;
+  --muted: #5b5d68;
+  --line: rgba(20, 22, 28, 0.1);
+  --accent: #7c5cfc;
+  --accent-soft: #6a4fe0;
+  --warm: #b5790a;
+  --surface-translucent: rgba(255, 255, 255, 0.85);
+  --surface-translucent-solid: rgba(255, 255, 255, 0.98);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  background: var(--ink);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-soft);
+  outline-offset: 2px;
+}
+
+.nav-link {
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.25s;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.chip {
+  border: 1px solid var(--line);
+  transition: border-color 0.2s, background 0.2s;
+}
+.chip:hover {
+  border-color: var(--accent-soft);
+  background: rgba(124, 92, 252, 0.08);
+}
+
+.hover-accent {
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.hover-accent:hover {
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+  color: #fff !important;
+}
+
+.social-icon {
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.social-icon:hover {
+  border-color: var(--accent-soft);
+  background: rgba(124, 92, 252, 0.12);
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
