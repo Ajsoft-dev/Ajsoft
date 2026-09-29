@@ -7,7 +7,7 @@ export const PROFILE = {
   phones: ["+234 806 801 2599", "+234 907 176 8452"],
   whatsappNumber: "2348068012599",
   cvPath: "/assets/Ajsoft_CV.pdf",
-  roles: ["Web Developer", "Designer", "Content Creator"],
+  roles: ["Web Developer", "Designer", "Creator"],
   social: {
     instagram: "https://www.instagram.com/sheriffdeen_ajijolaanabi",
     tiktok: "https://www.tiktok.com/@sheriffdeen_ajijolaanabi",
@@ -307,7 +307,6 @@ export const DESIGNS = [
     "/images/designs/more/4.jpg",
     "/images/designs/more/2.jpg",
     "/images/designs/more/6.jpg",
-    "/images/designs/more/7.jpg",
-    ],
+      ],
   },
 ];
